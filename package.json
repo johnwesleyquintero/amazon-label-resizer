@@ -1,0 +1,14 @@
+{
+  "name": "amazon-label-normalizer",
+  "version": "1.0.0",
+  "description": "Automated Amazon 4x6 Label Normalizer (Python backend, npm runner)",
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "start": "npm run resize",
+    "resize": "node scripts/run.js",
+    "clean": "node scripts/clean.js"
+  },
+  "keywords": ["amazon", "fba", "pdf", "labels", "automation", "ecommerce"],
+  "author": "Wes Bro",
+  "license": "MIT"
+}

@@ -1,0 +1,16 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Node
+node_modules/
+
+# Label data — may contain customer shipping details (PII). Never commit.
+input_labels/
+output_labels/
+
+# OS / editor
+.DS_Store
+Thumbs.db
