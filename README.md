@@ -50,6 +50,27 @@ This creates `venv/` and installs the single dependency, `pypdf`.
 
 ---
 
+## 📋 Operator SOP
+
+Run this every time you receive a TikTok FBT carton export.
+
+1. **Drop the files** — copy the source PDF(s) into `input_labels/`. Originals are never modified or deleted, so you can always re-run.
+2. **Normalize** — run `npm run resize`.
+3. **Verify the console output.** Compare pages *kept* against pages *read*. Each FBT carton contributes exactly one label, so a healthy run looks like:
+
+    ```text
+    Processing: Carton label.pdf... ✅ Done (12/24 pages kept, 12 duplicate(s) removed)
+    ✂️ Duplicates removed: 12 page(s) (24 → 12)
+    ```
+
+    - `N/N pages kept` with no duplicates reported means **nothing was detected as duplicated**. Either the file is already clean, or the duplicate pairs are no longer adjacent — inspect the PDF before printing.
+    - `❌ Failed` on a file means only that file was skipped; the rest of the batch still processed. Re-export the bad file and re-run.
+4. **Spot-check** `output_labels/`. Confirm the page count matches your carton count, then open one label and check the barcode is sharp and no content is cropped.
+5. **Print** `output_labels/resized_<original>.pdf`. Never print the originals — they contain the duplicate pages and the non-compliant page size.
+6. **Clear the deck** — run `npm run clean` once labels are printed and confirmed, so the next run starts from an empty output folder.
+
+---
+
 ## ⚙️ Architecture & Workflow
 
 ```text
