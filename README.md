@@ -1,5 +1,11 @@
 # Amazon 4×6 Label Normalizer (Python)
 
+---
+
+<img width="1198" height="927" alt="image" src="https://github.com/user-attachments/assets/b4aa74a1-0574-4cd6-b81d-1c5379e9c23b" />
+
+---
+
 A lightweight, backend-ready Python script that converts and normalizes shipping label PDFs (e.g., TikTok FBT, supplier exports) into strict **Amazon AWD-compliant 4×6 inch** PDFs. 
 
 Unlike browser-based tools that rasterize PDFs into blurry images, this script uses **vector-preserving transformations**, ensuring 100% barcode scannability and zero browser memory limits.
